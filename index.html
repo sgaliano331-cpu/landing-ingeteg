@@ -673,7 +673,7 @@
       this.classList.add('hidden');
       document.getElementById('form-success').classList.remove('hidden');
 
-      setTimeout(() => window.open(waUrl, '_blank'), 1000);
+      setTimeout(() => { window.location.href = waUrl; }, 1000);
     });
   </script>
 
