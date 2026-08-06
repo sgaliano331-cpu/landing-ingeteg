@@ -162,6 +162,34 @@
     .nav-logo.scrolled {
       mix-blend-mode: multiply;
     }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+    }
+    .gallery-item img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-item .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,46,22,0.85) 0%, rgba(5,46,22,0.2) 40%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="bg-white text-gris-800 antialiased">
@@ -366,9 +394,64 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- GALERÍA - NUESTRO TRABAJO -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-gris-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-14 fade-up">
+        <div class="inline-flex items-center space-x-2 mb-4">
+          <div class="w-8 h-0.5 bg-verde-600"></div>
+          <span class="text-verde-700 text-sm font-semibold tracking-wider uppercase">Nuestro Trabajo</span>
+          <div class="w-8 h-0.5 bg-verde-600"></div>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gris-900 leading-tight mb-4">
+          Técnicos en <span class="text-verde-700">acción</span>
+        </h2>
+        <p class="text-gris-600 text-lg">
+          Nuestro equipo trabajando en campo: reparaciones, mantenimientos e instalaciones con la calidad que nos caracteriza.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="gallery-item aspect-[3/4] fade-up shadow-lg">
+          <img src="foto-calentador.jpg" alt="Técnico Ingeteg reparando calentador de agua a gas en Medellín" loading="lazy">
+          <div class="gallery-overlay">
+            <div>
+              <span class="inline-block bg-verde-500/20 border border-verde-400/30 text-verde-300 text-xs font-semibold px-3 py-1 rounded-full mb-2">Gasodomésticos</span>
+              <p class="text-white font-bold text-lg leading-tight">Reparación de calentador de agua</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item aspect-[3/4] fade-up shadow-lg" style="transition-delay: 0.1s;">
+          <img src="foto-lavadora.jpg" alt="Técnico reparando lavadora de carga frontal a domicilio en Medellín" loading="lazy">
+          <div class="gallery-overlay">
+            <div>
+              <span class="inline-block bg-verde-500/20 border border-verde-400/30 text-verde-300 text-xs font-semibold px-3 py-1 rounded-full mb-2">Línea Blanca</span>
+              <p class="text-white font-bold text-lg leading-tight">Mantenimiento de lavadora</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item aspect-[3/4] fade-up shadow-lg" style="transition-delay: 0.2s;">
+          <img src="foto-aire.jpg" alt="Técnico realizando mantenimiento de aire acondicionado mini split en Medellín" loading="lazy">
+          <div class="gallery-overlay">
+            <div>
+              <span class="inline-block bg-verde-500/20 border border-verde-400/30 text-verde-300 text-xs font-semibold px-3 py-1 rounded-full mb-2">Aires Acondicionados</span>
+              <p class="text-white font-bold text-lg leading-tight">Mantenimiento de aire acondicionado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
   <!-- SERVICIOS -->
   <!-- ═══════════════════════════════════════════════════════════════════════ -->
-  <section id="servicios" class="py-24 lg:py-32 bg-gris-50 relative">
+  <section id="servicios" class="py-24 lg:py-32 bg-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="text-center max-w-3xl mx-auto mb-16 fade-up">
